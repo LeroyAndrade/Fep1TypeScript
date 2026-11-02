@@ -27,6 +27,28 @@
       <img src="./images/lion.jpg" alt="A developer lion" />
     </main>
 
+    <script type="module">
+  
+      import { FetchDB } from './src/services/FetchDB.ts'
+     FetchDB()
+          // Bij succesvolle afhandeling.
+            .then(data => {
+                console.log('Data ontvangen:');
+                console.table(data);
+            })
+
+            // Bij fouten.
+            .catch(error => {
+                console.error('Fetch error:', error);
+            })
+
+            // Wordt altijd uitgevoerd.
+            .finally(() => {
+                console.log('Fetch afgerond.');
+            });
+
+
+    </script>
     <script type="module" src="./src/main.ts"></script>
   </body>
 </html>

@@ -14,6 +14,12 @@
     "moduleDetection": "force",
     "noEmit": true,
 
+    // customPaths
+    "paths":{
+      "@rootPath/*" : [ "./*"]
+      // import {root} from "@rootPath"
+    },
+
     /* Linting */
     "noUnusedLocals": true,
     "noUnusedParameters": true,
