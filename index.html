@@ -27,6 +27,9 @@
       <img src="./images/lion.jpg" alt="A developer lion" />
     </main>
 
+    <p class="dbContent">text</p>
+    <a href="./voegRekeningToe.html">voegRekeningToe.html</a>
+
     <script type="module">
   
       import { FetchDB } from './src/services/FetchDB.ts'
@@ -35,6 +38,17 @@
             .then(data => {
                 console.log('Data ontvangen:');
                 console.table(data);
+
+                // get Naam
+                let naam = document.querySelector('.dbContent').innerHTML =data["users"][0]["naam"];
+                console.log(naam)
+
+                let UserID = document.querySelector('.dbContent').innerHTML =data["users"][0].userId;
+                console.log(UserID)
+                // get Saldo
+                let saldo = document.querySelector('.dbContent').innerText+="\n" + "saldo: " + data["users"][0]["saldo"];
+
+
             })
 
             // Bij fouten.

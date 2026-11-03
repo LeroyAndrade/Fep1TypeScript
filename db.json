@@ -11,11 +11,31 @@
             "rekeningenId": 1,
             "naam": "NPO Keuringsdienst van Waarde",
             "userID": 1,
-            "bedrag": 200,
-            "omschrijving": "Maandelijkse Zorgverzekering",
+            "bedrag": 99.9,
+            "omschrijving": "Leden abonnement",
             "datumAfschrijving": "2026-12-12",
             "isAfgeschreven": false,
-            "terugkerend": true
+            "terugkerendeAfschrijving": true
+        },
+        {
+            "rekeningenId": 2,
+            "naam": "RTL Eigen Huis & Tuin",
+            "userID": 1,
+            "bedrag": 5.75,
+            "omschrijving": "Maandelijkse tuinieren abonnement",
+            "datumAfschrijving": "2026-12-12",
+            "isAfgeschreven": false,
+            "terugkerendeAfschrijving": true
+        },
+        {
+            "rekeningenId": 3,
+            "naam": "Undercover in Nederland",
+            "userID": 1,
+            "bedrag": 125,
+            "omschrijving": "Maandelijkse Gold abonnement",
+            "datumAfschrijving": "2026-12-12",
+            "isAfgeschreven": false,
+            "terugkerendeAfschrijving": true
         }
     ]
 }

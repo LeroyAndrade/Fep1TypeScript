@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <base href="%BASE_URL%" />
+    <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
+    <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Voeg rekening toe</title>
+    <!-- <link rel="stylesheet" href="./style.css" /> -->
+    <script type="module" src="./src/main.js"></script>
+    <!-- <script type="module" src="./src/github-AantalRequestsLimiet.js"></script> -->
+
+</head>
+
+
+
+<body>
+
+    <form id="rekeningToevoegenForm">
+        <label for="naam">Naam</label>
+        <input type="text" id="naam" name="naam" required value="P Puk">
+        <br>
+
+        <script type="module">
+            // import fetchDB
+            import { vulGebruikerFormSelect } from "./GebruikerSelect.ts";
+            vulGebruikerFormSelect();
+        </script>
+
+        <label for="userId">userId</label>
+         <select id="userId" name="userId">
+             <option value="">Selecteer een gebruiker</option>
+        </select>
+
+        <input type="text" id="userId" name="userId" required value="1">
+        <br>
+        <!-- userId auto generate -->
+         
+        <br>
+        <label for="bedrag">Bedrag</label>
+        <input type="number" id="bedrag" name="bedrag" step="0.01" required value="9001">
+        <br>
+        <label for="omschrijving">Omschrijving</label>
+        <input type="text" id="omschrijving" name="omschrijving" required value="Over 9000!">
+        <br>
+        <label for="datumAfschrijving">Datum afschrijving</label>
+        <input type="date" id="datumAfschrijving" name="datumAfschrijving" required value="21-12-2026">
+
+        <label>
+            <input type="checkbox" name="isAfgeschreven">
+            Is afgeschreven
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" name="terugkerendeAfschrijving">
+            Terugkerende afschrijving
+        </label>
+
+        <button type="submit">Rekening toevoegen</button>
+    </form>
+
+    <footer>
+        <script src="formVerwerken.js"></script>
+    </footer>
+</body>
+
+
+
+</html>

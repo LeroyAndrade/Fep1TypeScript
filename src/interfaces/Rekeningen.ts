@@ -1,8 +1,10 @@
 export interface Rekeningen {
     rekeningenId: number
     naam: string;
+    userId:number;
     bedrag: number;
     omschrijving: string;
-    datum: Date;
+    datumAfschrijving: Date;
+    isAfgeschreven: boolean;
     terugkerendeAfschrijving: boolean;
 }
