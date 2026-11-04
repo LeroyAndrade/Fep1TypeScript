@@ -25,19 +25,21 @@
 
         <script type="module">
             // import fetchDB
-            import { vulGebruikerFormSelect } from "./GebruikerSelect.ts";
-            vulGebruikerFormSelect();
+            import { FetchDB } from "@services/FetchDB.ts";
+            import { RekeningHouderSelecteren } from "@services/RekeningHouderSelecteren.ts";
+            FetchDB()
+            // vulGebruikerFormSelect();
         </script>
 
         <label for="userId">userId</label>
-         <select id="userId" name="userId">
-             <option value="">Selecteer een gebruiker</option>
+        <select id="userId" name="userId">
+            <option value="">Selecteer een gebruiker</option>
         </select>
 
         <input type="text" id="userId" name="userId" required value="1">
         <br>
         <!-- userId auto generate -->
-         
+
         <br>
         <label for="bedrag">Bedrag</label>
         <input type="number" id="bedrag" name="bedrag" step="0.01" required value="9001">
@@ -58,11 +60,18 @@
             Terugkerende afschrijving
         </label>
 
-        <button type="submit">Rekening toevoegen</button>
+        <button name="rekeningToevoegenForm" id="rekeningToevoegenForm" type="submit">Rekening toevoegen</button>
     </form>
 
     <footer>
-        <script src="formVerwerken.js"></script>
+        <script type="module">
+            import { FetchDB } from "@services/FetchDB.ts";
+            import { AfschrijvingenClass } from "@services/AfschrijvingenClass.ts";
+        </script>
+
+        <script src="./formVerwerken.js" onload="console.log('formVerwerken.js succesvol geladen')"
+            onerror="console.log('formVerwerken.js 400 niet geladen')">
+            </script>
     </footer>
 </body>
 

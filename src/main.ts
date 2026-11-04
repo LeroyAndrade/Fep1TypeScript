@@ -1,3 +1,4 @@
+import "@rootPath/formVerwerken.js"
 
 export function PageAbout(): string {
   return `

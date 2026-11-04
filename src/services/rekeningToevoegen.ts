@@ -1,5 +1,5 @@
-import { FetchDB } from "./FetchDB.ts";
-import { AfschrijvingenClass } from "./AfschrijvingenClass.ts";
+import { FetchDB } from "@services/FetchDB.ts";
+import { AfschrijvingenClass } from "@services/AfschrijvingenClass.ts";
 
 const afschrijvingenClass = new AfschrijvingenClass();
 
@@ -37,7 +37,7 @@ if (rekeningToevoegenForm) {
             isAfgeschreven: formData.has("isAfgeschreven"),
             terugkerendeAfschrijving: formData.has("terugkerendeAfschrijving")
         });
-
+        console.log(nieuwRekening);
     });
     // window.alert(JSON.stringify([...formData.entries()]))
 

@@ -8,3 +8,4 @@ export interface Rekeningen {
     isAfgeschreven: boolean;
     terugkerendeAfschrijving: boolean;
 }
+ 

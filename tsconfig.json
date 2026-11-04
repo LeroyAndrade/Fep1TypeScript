@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "target": "es2023",
+    
     "module": "esnext",
     "lib": ["ES2023", "DOM"],
     "types": ["vite/client"],
@@ -14,17 +15,73 @@
     "moduleDetection": "force",
     "noEmit": true,
 
-    // customPaths
+     /* Linting */
+    "strict": true,
+ 
+    // customPaths, dit moet ook staan in vite.config.ts
     "paths":{
-      "@rootPath/*" : [ "./*"]
-      // import {root} from "@rootPath"
+      "@rootPath*" : [ "./*"],
+      "@webpagina*" : [ "./view/pages/*"],
+      "@assets*" : [ "./src/assets/*"],
+      "@interfaces*" : [ "./src/interfaces/*"],
+      "@services*" : [ "./src/services/*"]
+
+      // voorbeeld module:
+      //  import { FetchDB } from "@services/fetchDB.ts";
     },
 
-    /* Linting */
-    "noUnusedLocals": true,
+    // voor Debugging
+
+    // Forceer ongebruikte variabelen: gerichte error opgeven
+    "noUnusedLocals":true,
+
+    // Forceer ongebruikte parameters: gerichte error opgeven
     "noUnusedParameters": true,
+
+    // key value pairs, moeten kloppen en binnen de juiste plekken staan.
+    "allowUnusedLabels": false,
+
+    //je kunt bestanden hebben geimporteerd die andere dingen doet maar er niets van binnen importeren, 
+    // maar bji typo importen naar krijg je een importing error.
+     "noUncheckedSideEffectImports": true,
+
+    // bij switches, moet je break of een default hebben, error if not
+    "noFallthroughCasesInSwitch": true,
+
+    //code die niets doet, wil je waarschijnlijk verwijderen, dit vertelt je waar dat is.
+
+    "allowUnreachableCode": false,
+    
+    //index van een array, zorgt ervoor dat een 4e index van een array die er maar 3 heeft, nu wel toont waar de error zit.
+    //hierdoor moet je bijvoorbeeld doen: console.log(numbers[4]?.toString) en dus gebruik maken van -> ?, maar dat is wat HU wilt, dus all is good.
+    // het voorkomt runtime errors
+    "noUncheckedIndexedAccess":true,
+
+    // zelfde maar voor objecten: voorbeeld: settings.darkMod geeft een error, hoort te zijn: settings.darkMode]
+    "noPropertyAccessFromIndexSignature": true, 
+
+  //converteer TS specifieke code, bijvoorbeeld enums naar Javascript
     "erasableSyntaxOnly": true,
-    "noFallthroughCasesInSwitch": true
+
+    "noImplicitOverride": true,
+    // wanneer een Klasse, gebruik maakt voor override, dan wordt verteld dat ie override foo(){console.log("1")} verwacht
+
+    // je moet specifieren, expliciet zijn, wat je wilt in je object, het kan niet bestaan en als output: undefined zijn.
+    "exactOptionalPropertyTypes": true,
+
+    // Toggle
+
+    // Hoveren over je error toont de Type informatie en de volledige type, no matter how big the type is.
+    // anders wordt het truncated zodat het makkelijk is om te lezen.
+    "noErrorTruncation": true,
+
+    // TS converteren naar JS, --> JS Only --> het staat toe js bestanden te importen in je TypeScript
+    // "allowJs": false,
+
+    // parseFloat(123456) geef een error want het verwacht een String, geen nummer, maar op false, runt t wel
+    // "checkJs": true
+        // maar, in het bestand waar je in werkt, boven aan: //@ts-check  (met comment)  doet 't zelfde als false
+
   },
   "include": ["src"]
 }

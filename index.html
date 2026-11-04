@@ -1,68 +1,67 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <base href="%BASE_URL%" />
-    <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
-    <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite-template JS only no typescript</title>
-    <!-- <link rel="stylesheet" href="./style.css" /> -->
-    <script type="module" src="./src/main.js"></script>
-    <!-- <script type="module" src="./src/github-AantalRequestsLimiet.js"></script> -->
-  </head>
 
-  <body>
-    <header>
-      <nav>
-        <a href="./">Home</a>
-        <a href="./nested/about.html">About</a>
-        <a href="./nested/contact.html">Contact</a>
-      </nav>
-    </header>
-    <main>
-      <h1>Boilerplate</h1>
-      <p class="current-date"></p>
-      <p class="github-poging">Laden..</p>
-      <img src="./images/lion.jpg" alt="A developer lion" />
-    </main>
+<head>
+  <meta charset="UTF-8" />
+  <base href="%BASE_URL%" />
+  <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
+  <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite-template JS only no typescript</title>
+  <!-- <link rel="stylesheet" href="./style.css" /> -->
+  <script type="module" src="./src/main.js"></script>
+
+  <!-- <script type="module" src="./src/github-AantalRequestsLimiet.js"></script> -->
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a href="${Routes.home}">tekst</a>
+      <a href="./src/view/pages/voegRekeningToe.html">Voeg rekening toe</a>
+      <a href="./nested/contact.html">Contact</a>
+    </nav>
+  </header>
+  <main>
 
     <p class="dbContent">text</p>
-    <a href="./voegRekeningToe.html">voegRekeningToe.html</a>
+    <a href="${Routes.voegRekeningToe}">voegRekeningToe.html</a>
 
     <script type="module">
-  
-      import { FetchDB } from './src/services/FetchDB.ts'
-     FetchDB()
-          // Bij succesvolle afhandeling.
-            .then(data => {
-                console.log('Data ontvangen:');
-                console.table(data);
 
-                // get Naam
-                let naam = document.querySelector('.dbContent').innerHTML =data["users"][0]["naam"];
-                console.log(naam)
+      import { FetchDB } from '@services/FetchDB.ts'
+      FetchDB()
+        // Bij succesvolle afhandeling.
+        .then(data => {
+          console.log('Data ontvangen:');
+          console.table(data);
 
-                let UserID = document.querySelector('.dbContent').innerHTML =data["users"][0].userId;
-                console.log(UserID)
-                // get Saldo
-                let saldo = document.querySelector('.dbContent').innerText+="\n" + "saldo: " + data["users"][0]["saldo"];
+          // get Naam
+          let naam = document.querySelector('.dbContent').innerHTML = data["users"][0]["naam"];
+          console.log(naam)
 
+          let UserID = document.querySelector('.dbContent').innerHTML = data["users"][0].userId;
+          console.log(UserID)
+          // get Saldo
+          let saldo = document.querySelector('.dbContent').innerText += "\n" + "saldo: " + data["users"][0]["saldo"];
+        })
 
-            })
+        // Bij fouten.
+        .catch(error => {
+          console.error('Fetch error:', error);
+        })
 
-            // Bij fouten.
-            .catch(error => {
-                console.error('Fetch error:', error);
-            })
-
-            // Wordt altijd uitgevoerd.
-            .finally(() => {
-                console.log('Fetch afgerond.');
-            });
+        // Wordt altijd uitgevoerd.
+        .finally(() => {
+          console.log('Fetch afgerond.');
+        });
 
 
     </script>
-    <script type="module" src="./src/main.ts"></script>
-  </body>
+
+  </main>
+
+  <script type="module" src="./src/main.ts"></script>
+</body>
+
 </html>

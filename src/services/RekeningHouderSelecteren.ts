@@ -1,10 +1,12 @@
-import { FetchDB } from "../services/FetchDB.ts";
+import { FetchDB } from "@services/FetchDB.ts";
 
-export async function vulGebruikerFormSelect(){
+export async function RekeningHouderSelecteren(){
     const data = await FetchDB();
     const userSelectFound = document.querySelector("#userId");
 
-    if (!userSelectFound) console.log('User Not Found');
+    if (!userSelectFound){
+        console.log('User Not Found');
+    }
 
     // komt vanuit de fetch wanneer opgeroepen
     data.users.forEach(user => {
