@@ -1,5 +1,6 @@
 import { FetchDB } from "@services/FetchDB.ts";
 import { AfschrijvingenClass } from "@services/AfschrijvingenClass.ts";
+import { RekeningToevoegen } from "@services/RekeningToevoegenInJson.ts"
 
 const afschrijvingenClass = new AfschrijvingenClass();
 
@@ -12,7 +13,7 @@ if (rekeningToevoegenForm) {
         e.preventDefault();
 
         // get JSON data
-        const data = await FetchDB();
+        const data = await FetchDB("rekeningen");
 
         // data vanuit het formulier
         const formData = new FormData(rekeningToevoegenForm)
@@ -22,7 +23,7 @@ if (rekeningToevoegenForm) {
         // window.alert(nieuwId)
 
         // Zoek hoogste nummer RekeningID, begin bij 0, pak hoogste en tel er 1 bij op
-        const nieuwId = Math.max(0, ...data.rekeningen.map(rekening => rekening.rekeningenId)) + 1;
+        const nieuwId = Math.max(0, ...data.map(rekening => rekening.rekeningenId)) + 1;
 
 
   const nieuwRekening = await afschrijvingenClass.createNewAfschrijving({
@@ -38,7 +39,9 @@ if (rekeningToevoegenForm) {
             terugkerendeAfschrijving: formData.has("terugkerendeAfschrijving")
         });
         console.log(nieuwRekening);
+        const dataOpslaan = await RekeningToevoegen(nieuwRekening);
     });
     // window.alert(JSON.stringify([...formData.entries()]))
 
 }
+

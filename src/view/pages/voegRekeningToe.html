@@ -19,36 +19,36 @@
 <body>
 
     <form id="rekeningToevoegenForm">
-        <label for="naam">Naam</label>
-        <input type="text" id="naam" name="naam" required value="P Puk">
-        <br>
-
         <script type="module">
             // import fetchDB
-            import { FetchDB } from "@services/FetchDB.ts";
             import { RekeningHouderSelecteren } from "@services/RekeningHouderSelecteren.ts";
-            FetchDB()
+
+            RekeningHouderSelecteren()
+
+            console.log("FetchDB opgeroepen")
+
+            //  console.log("RekeningHouderSelecteren opgeroepen")
             // vulGebruikerFormSelect();
         </script>
 
-        <label for="userId">userId</label>
-        <select id="userId" name="userId">
+        <label for="userNaam">Naam</label>
+        <select id="userNaam" name="userNaam">
             <option value="">Selecteer een gebruiker</option>
         </select>
 
-        <input type="text" id="userId" name="userId" required value="1">
+        <input type="text" id="userId" name="userId" required value="">
         <br>
         <!-- userId auto generate -->
 
         <br>
         <label for="bedrag">Bedrag</label>
-        <input type="number" id="bedrag" name="bedrag" step="0.01" required value="9001">
+        <input type="number" id="bedrag" name="bedrag" step="0.01" required>
         <br>
         <label for="omschrijving">Omschrijving</label>
-        <input type="text" id="omschrijving" name="omschrijving" required value="Over 9000!">
+        <input type="text" id="omschrijving" name="omschrijving" required>
         <br>
         <label for="datumAfschrijving">Datum afschrijving</label>
-        <input type="date" id="datumAfschrijving" name="datumAfschrijving" required value="21-12-2026">
+        <input type="date" id="datumAfschrijving" name="datumAfschrijving" required>
 
         <label>
             <input type="checkbox" name="isAfgeschreven">
@@ -60,18 +60,17 @@
             Terugkerende afschrijving
         </label>
 
-        <button name="rekeningToevoegenForm" id="rekeningToevoegenForm" type="submit">Rekening toevoegen</button>
+        <button id="rekeningToevoegenForm" type="submit">Rekening toevoegen</button>
     </form>
 
     <footer>
-        <script type="module">
-            import { FetchDB } from "@services/FetchDB.ts";
-            import { AfschrijvingenClass } from "@services/AfschrijvingenClass.ts";
-        </script>
 
-        <script src="./formVerwerken.js" onload="console.log('formVerwerken.js succesvol geladen')"
-            onerror="console.log('formVerwerken.js 400 niet geladen')">
-            </script>
+    <script type="module" src="../../../formVerwerken.ts" 
+        onload="console.log('formVerwerken.js succesvol geladen')"
+        onerror="console.log('formVerwerken.js 400 niet geladen')">
+    </script>
+
+
     </footer>
 </body>
 

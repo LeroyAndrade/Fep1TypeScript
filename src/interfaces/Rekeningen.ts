@@ -4,7 +4,7 @@ export interface Rekeningen {
     userId:number;
     bedrag: number;
     omschrijving: string;
-    datumAfschrijving: Date;
+    datumAfschrijving: string;
     isAfgeschreven: boolean;
     terugkerendeAfschrijving: boolean;
 }

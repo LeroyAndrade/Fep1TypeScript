@@ -4,6 +4,11 @@
             "userId": 1,
             "naam": "Leroy Andrade",
             "saldo": 9001
+        },
+         {
+            "userId": 2,
+            "naam": "P Puk",
+            "saldo": 6000
         }
     ],
     "rekeningen": [
@@ -13,8 +18,8 @@
             "userID": 1,
             "bedrag": 99.9,
             "omschrijving": "Leden abonnement",
-            "datumAfschrijving": "2026-12-12",
-            "isAfgeschreven": false,
+            "datumAfschrijving": "2026-12-04",
+            "isAfgeschreven": true,
             "terugkerendeAfschrijving": true
         },
         {
@@ -38,4 +43,4 @@
             "terugkerendeAfschrijving": true
         }
     ]
-}
+} 

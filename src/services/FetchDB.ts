@@ -10,13 +10,14 @@
  * FetchDB
  * Haalt data op uit db.json en retourneert een Promise.
  *
- * @returns {Promise<Object>} De opgehaalde JSON-data.
+ * @param endpoint - JSON-server endpoint.
+ * @returns Een Promise met de opgehaalde JSON-data.
  */
 
-export function FetchDB() {
+export function FetchDB<T>(endpoint: string): Promise<T> {
   return new Promise((resolve, reject) => {
-    fetch('../../db.json')
-
+    // fetch('../../db.json')
+    fetch(`http://localhost:3000/${endpoint}`)
       .then(response => {
         if (!response.ok) {
            throw new Error(`HTTP Error: ${response.status}`);   
@@ -24,13 +25,12 @@ export function FetchDB() {
         console.log(response.status)
 
         // Converteer Json
-        console.table(response)
         return response.json();
       })
 
       .then(data => {
-         console.table(data)
-        resolve(data);
+        //  console.table(data)
+        resolve(data as T);
       })
 
       .catch(error => {
