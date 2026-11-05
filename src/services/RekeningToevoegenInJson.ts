@@ -10,6 +10,7 @@ export async function RekeningToevoegen(nieuwRekening: Rekeningen): Promise<Reke
     });
 
     if (!response.ok) {
+        const error = await response.text();
         console.log(response.status)
         console.log(response.text)
         throw new Error("Rekening toevoegen is mislukt")
