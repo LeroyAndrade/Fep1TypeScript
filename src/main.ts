@@ -1,5 +1,3 @@
-import "@rootPath/formVerwerken.js"
-
 export function PageAbout(): string {
   return `
     <main class="about-page">

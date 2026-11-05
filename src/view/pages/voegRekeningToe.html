@@ -19,17 +19,9 @@
 <body>
 
     <form id="rekeningToevoegenForm">
-        <script type="module">
-            // import fetchDB
-            import { RekeningHouderSelecteren } from "@services/RekeningHouderSelecteren.ts";
-
-            RekeningHouderSelecteren()
-
-            console.log("FetchDB opgeroepen")
-
-            //  console.log("RekeningHouderSelecteren opgeroepen")
-            // vulGebruikerFormSelect();
-        </script>
+        <label for="naam">Naam rekening</label>
+        <input type="text" id="naam" name="naam" required value="P Puk">
+        <br>
 
         <label for="userNaam">Naam</label>
         <select id="userNaam" name="userNaam">
@@ -65,10 +57,17 @@
 
     <footer>
 
-    <script type="module" src="../../../formVerwerken.ts" 
-        onload="console.log('formVerwerken.js succesvol geladen')"
-        onerror="console.log('formVerwerken.js 400 niet geladen')">
-    </script>
+        <script type="module">
+
+            import { RekeningHouderSelecteren } from "@services/RekeningHouderSelecteren.ts";
+
+            RekeningHouderSelecteren()
+
+        </script>
+
+        <script type="module" src="../../../formVerwerken.ts" onload="console.log('formVerwerken.js succesvol geladen')"
+            onerror="console.log('formVerwerken.js 400 niet geladen')">
+            </script>
 
 
     </footer>

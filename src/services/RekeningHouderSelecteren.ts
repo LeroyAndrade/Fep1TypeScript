@@ -32,6 +32,6 @@ export async function RekeningHouderSelecteren() {
     userNameSelectFound.addEventListener("change", e => {
         e.preventDefault()
         const selectedOption = userNameSelectFound.selectedOptions[0]
-        userIdSelectFound.value = selectedOption.dataset.userId;
+        userIdSelectFound.value = selectedOption.dataset.userId ?? "";
     });
 }
