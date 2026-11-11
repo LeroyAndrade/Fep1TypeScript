@@ -26,7 +26,10 @@ Of enable in MarketPlace: EsLint
 >>> voeg toe
 >>>> `"backend": "json-server --watch public/db.json --port 3000"`
 >>>>> Deze verwacht een db.json file in de public directory. 
+>>>>> npm run backend
 
+>> http://localhost:3000/rekeningen
+>> http://localhost:3000/users
 
 Debug
 In Eslint.config

@@ -24,8 +24,9 @@
       "@webpagina*" : [ "./view/pages/*"],
       "@assets*" : [ "./src/assets/*"],
       "@interfaces*" : [ "./src/interfaces/*"],
-      "@services*" : [ "./src/services/*"]
-
+      "@services*" : [ "./src/services/*"],
+      "@rekeningService*" : [ "./src/service/Rekening/*"],
+      "@userService*" : [ "./src/service/User/*"]
       // voorbeeld module:
       //  import { FetchDB } from "@services/fetchDB.ts";
     },

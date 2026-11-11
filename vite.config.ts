@@ -9,6 +9,8 @@ export default defineConfig({
             "@assets": fileURLToPath(new URL("./src/assets", import.meta.url)),
             "@interfaces": fileURLToPath(new URL("./src/interfaces", import.meta.url)),
             "@services": fileURLToPath(new URL("./src/services", import.meta.url)),
+            "@rekeningService": fileURLToPath(new URL("./src/services/Rekening", import.meta.url)),
+            "@userService": fileURLToPath(new URL("./src/services/User", import.meta.url))
         }
     }
 });

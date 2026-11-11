@@ -1,6 +1,6 @@
 import { FetchDB } from "@services/FetchDB.ts";
-import { AfschrijvingenClass } from "@services/AfschrijvingenClass.ts";
-import { RekeningToevoegen } from "@services/RekeningToevoegenInJson.ts"
+import { AfschrijvingenClass } from "@rekeningService/AfschrijvingenClass.ts";
+import { RekeningToevoegen } from "@rekeningService/RekeningToevoegenInJson.ts"
 
 const afschrijvingenClass = new AfschrijvingenClass();
 

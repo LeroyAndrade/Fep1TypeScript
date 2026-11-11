@@ -13,7 +13,7 @@ export async function RekeningToevoegen(nieuwRekening: Rekeningen): Promise<Reke
         const error = await response.text();
         console.log(response.status)
         console.log(response.text)
-        throw new Error("Rekening toevoegen is mislukt")
+        throw new Error("Rekening toevoegen is mislukt, \n De error:\n" + error)
     }
 
     // Moet voldoen aan de Rekeningen Interface

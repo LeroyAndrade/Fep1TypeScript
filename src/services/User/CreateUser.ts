@@ -1,4 +1,4 @@
-import type {User} from "../interfaces/User";
+import type {User} from "../../interfaces/User";
 
 export class createUser {
 
